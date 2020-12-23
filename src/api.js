@@ -4,6 +4,42 @@ const getCalendarTasks = (month, year) => {
 	return fetch(`${BASE_URL}/calendar/${year}/${month}`).then(res => res.json());
 };
 
+const getAllTasks = () => {
+	return fetch(`${BASE_URL}/tasks`).then(res => res.json());
+};
+
+const getAllTasksMock = () => {
+	return Promise.resolve([
+		{
+			id: 1,
+			desc: "Survive",
+			deadline: {
+				day: 31,
+				month: 12,
+				year: 2020
+			}
+		},
+		{
+			id: 6,
+			desc: "Finish React Native App",
+			deadline: {
+				day: 23,
+				month: 12,
+				year: 2020
+			}
+		},
+		{
+			id: 5,
+			desc: "Survive",
+			deadline: {
+				day: 9,
+				month: 1,
+				year: 2021
+			}
+		}
+	]);
+};
+
 const getCalendarTasksMock = (month, year) => {
 	const calendarMocks = [
 		{
@@ -14,18 +50,18 @@ const getCalendarTasksMock = (month, year) => {
 					id: 1,
 					desc: "Survive",
 					deadline: {
-						day: 1,
-						month: 1,
-						year: 2021
+						day: 31,
+						month: 12,
+						year: 2020
 					}
 				},
 				{
 					id: 6,
 					desc: "Finish React Native App",
 					deadline: {
-						day: 1,
-						month: 1,
-						year: 2040
+						day: 23,
+						month: 12,
+						year: 2020
 					}
 				},
 			]
@@ -55,5 +91,6 @@ const getCalendarTasksMock = (month, year) => {
 
 
 export default {
-	getCalendarTasks: getCalendarTasksMock
+	getCalendarTasks: getCalendarTasksMock,
+	getAllTasks: getAllTasksMock
 }
