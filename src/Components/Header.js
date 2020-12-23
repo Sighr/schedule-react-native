@@ -24,7 +24,6 @@ const Header = ({name, showPlus}) => {
 
 const styles = StyleSheet.create({
 	container: {
-		// position: 'absolute',
 		flex: 0.08,
 		padding: 5,
 		flexDirection: 'row',
