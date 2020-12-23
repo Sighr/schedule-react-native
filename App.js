@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationContainer} from '@react-navigation/native';
+import MyTasks from "./src/Screens/MyTasks.js";
+import Calendar from "./src/Screens/Calendar.js";
+import Stats from "./src/Screens/Stats.js";
+import TaskSources from "./src/Screens/TaskSources.js";
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	return (
+		<NavigationContainer>
+			<Drawer.Navigator initialRouteName="Calendar">
+				<Drawer.Screen name="My tasks" component={MyTasks}/>
+				<Drawer.Screen name="Calendar" component={Calendar}/>
+				<Drawer.Screen name="Stats" component={Stats}/>
+				<Drawer.Screen name="Sources" component={TaskSources}/>
+			</Drawer.Navigator>
+		</NavigationContainer>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
