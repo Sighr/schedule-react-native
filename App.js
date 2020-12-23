@@ -13,7 +13,8 @@ const Drawer = createDrawerNavigator();
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Drawer.Navigator drawerStyle={styles.menu} drawerContent={(props) => <NavigatorContent {...props}/>} initialRouteName="Calendar">
+			<Drawer.Navigator drawerStyle={styles.menu} drawerContent={(props) => <NavigatorContent {...props}/>}
+							  initialRouteName="Calendar">
 				<Drawer.Screen name="Мои задачи" component={MyTasks}/>
 				<Drawer.Screen name="Календарь" component={Calendar}/>
 				<Drawer.Screen name="Статистика" component={Stats}/>

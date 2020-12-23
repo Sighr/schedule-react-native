@@ -10,6 +10,6 @@ const NavigatorContent = (props) => {
                             activeBackgroundColor='black' activeTintColor='white'/>
         </DrawerContentScrollView>
     );
-}
+};
 
 export default NavigatorContent;
