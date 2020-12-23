@@ -22,7 +22,8 @@ const NavigatorContent = (props) => {
                             activeBackgroundColor='#FEEFF0'/>
         </DrawerContentScrollView>
     );
-}
+};
+
 
 const styles = StyleSheet.create({
     text: {

@@ -1,7 +1,5 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
-import RouterButtons from "../Screens/RouterButtons.js";
 import {Image} from "react-native";
 import {DrawerActions, useNavigation} from "@react-navigation/native";
 
