@@ -16,8 +16,8 @@ const NavigatorContent = (props) => {
             <Image style={styles.photo}
                  source={require('../../assets/photo.png')}
             />
-            <Text style={styles.name}>Johanna Dou</Text>
-            <Text style={styles.email}>johanna@sfedu.ru</Text>
+            <Text style={styles.name}>Lazy Student</Text>
+            <Text style={styles.email}>lazystudent@sfedu.ru</Text>
             <DrawerItemList {...props} labelStyle={styles.text}
                             activeBackgroundColor='#FEEFF0'/>
         </DrawerContentScrollView>

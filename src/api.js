@@ -141,7 +141,7 @@ const getStatsMock = () => {
 						name: 'Programming languages',
 						score: 5000,
 						max_score: 6000,
-						percent: 5/6,
+						percent: 500/6,
 					},
 				]
 			},
