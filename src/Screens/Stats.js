@@ -13,7 +13,6 @@ const Stats = ({navigation}) => {
 		<>
 			<Header name="Статистика" showPlus={false}/>
 			{stats && stats.map((stat) => {
-				console.log(stat);
 				return (
 					<View style={styles.block} key={stat.source_id}>
 						<Text style={styles.textSours}>{stat.source_name}</Text>
