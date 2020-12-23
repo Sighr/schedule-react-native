@@ -8,7 +8,7 @@ const MyTasks = ({navigation}) => {
 
 	const [tasks, setTasks] = useState(null);
 
-	useEffect(() => {api.getAllTasks().then((data => setTasks(data)))});
+	useEffect(() => {api.getAllTasks().then((data => setTasks(data)))}, []);
 
 	return (
 		<>

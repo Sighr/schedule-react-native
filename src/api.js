@@ -8,6 +8,14 @@ const getAllTasks = () => {
 	return fetch(`${BASE_URL}/tasks`).then(res => res.json());
 };
 
+const getAllTaskSources = () => {
+	return fetch(`${BASE_URL}/sources`).then(res => res.json());
+};
+
+const getStats = () => {
+	return fetch(`${BASE_URL}/stats`).then(res => res.json());
+};
+
 const getAllTasksMock = () => {
 	return Promise.resolve([
 		{
@@ -89,8 +97,61 @@ const getCalendarTasksMock = (month, year) => {
 	return Promise.resolve(suitable[0]);
 };
 
+const getAllTaskSourcesMock = () => {
+	return Promise.resolve([
+		{
+			id: 1,
+			name: 'SFEDU Moodle',
+			user: 'Lazy Student'
+		},
+		{
+			id: 2,
+			name: 'SFEDU ulearn',
+			user: 'Lazy Student'
+		}
+	]);
+};
+
+const getStatsMock = () => {
+	return Promise.resolve(
+		[
+			{
+				source_id: 1,
+				source_name: 'SFEDU Moodle',
+				source_stats: [
+					{
+						name: 'Game design',
+						score: 60,
+						max_score: 100,
+						percent: 60,
+					},
+					{
+						name: 'Computer vision',
+						score: 5,
+						max_score: 100,
+						percent: 5,
+					},
+				]
+			},
+			{
+				source_id: 2,
+				source_name: 'SFEDU ulearn',
+				source_stats: [
+					{
+						name: 'Programming languages',
+						score: 5000,
+						max_score: 6000,
+						percent: 5/6,
+					},
+				]
+			},
+		]
+	);
+};
 
 export default {
 	getCalendarTasks: getCalendarTasksMock,
-	getAllTasks: getAllTasksMock
+	getAllTasks: getAllTasksMock,
+	getAllTaskSources: getAllTaskSourcesMock,
+	getStats: getStatsMock
 }
