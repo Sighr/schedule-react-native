@@ -15,7 +15,13 @@ const Calendar = ({navigation}) => {
 
 
 	useEffect(() => {
-		api.getCalendarTasks(month, year).then((data) => {setCalendarTasks(data); setError(null);}).catch(() => setError('Could not load tasks'));
+		api.getCalendarTasks(month, year).then((data) => {
+			setCalendarTasks(data);
+			setError(null);
+		}).catch(() => {
+			setCalendarTasks(null);
+			setError('Could not load tasks')
+		});
 	}, [month, year]);
 
 	return (
@@ -26,7 +32,8 @@ const Calendar = ({navigation}) => {
 				<TextInput value={year.toString()} onChangeText={(text) => text && setYear(parseInt(text))}/>
 				{calendarTasks && calendarTasks.tasks.map((task) => {
 					return (
-						<Text key={task.id}>{task.desc} {task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
+						<Text
+							key={task.id}>{task.desc} {task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
 					)
 				})}
 				<Text>{error}</Text>
