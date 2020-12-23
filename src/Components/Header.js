@@ -24,8 +24,8 @@ const Header = ({name, showPlus}) => {
 
 const styles = StyleSheet.create({
 	container: {
-		//flex: 0.08,
-		height: 40,
+		flex: 0.08,
+		// height: 40,
 		padding: 5,
 		flexDirection: 'row',
 		backgroundColor: '#fff',

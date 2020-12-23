@@ -29,7 +29,7 @@ const getAllTasksMock = () => {
 		},
 		{
 			id: 6,
-			desc: "Finish React Native App",
+			desc: "Finish App",
 			deadline: {
 				day: 23,
 				month: 12,
@@ -65,7 +65,7 @@ const getCalendarTasksMock = (month, year) => {
 				},
 				{
 					id: 6,
-					desc: "Finish React Native App",
+					desc: "Finish App",
 					deadline: {
 						day: 23,
 						month: 12,

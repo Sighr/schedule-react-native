@@ -16,9 +16,9 @@ const MyTasks = ({navigation}) => {
 			<Header name="Мои задачи" showPlus={true}/>
 			{tasks && tasks.map((task) => {
 				return (
-					<View style={styles.block}>
-						<Text style={styles.task}key={task.id}>{task.desc}</Text>
-						<Text style={styles.task}key={task.id}>{task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
+					<View style={styles.block} key={task.id}>
+						<Text style={styles.task}>{task.desc}</Text>
+						<Text style={styles.task}>{task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
 					</View>
 				)
 			})}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 'auto',
 	},

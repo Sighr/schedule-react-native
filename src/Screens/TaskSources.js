@@ -14,9 +14,9 @@ const TaskSources = ({navigation}) => {
 			<Header name="Источники" showPlus={true}/>
 			{taskSources && taskSources.map((src) => {
 				return (
-					<View style={styles.block}>
-						<Text style={styles.textSours} key={src.id}>{src.name}</Text>
-						<Text style={styles.textUser} key={src.id}>{src.user}</Text>
+					<View style={styles.block} key={src.id}>
+						<Text style={styles.textSours}>{src.name}</Text>
+						<Text style={styles.textUser}>{src.user}</Text>
 					</View>
 				);
 			})}
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 'auto',
 	},
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 'auto',
 		color: 'gray',

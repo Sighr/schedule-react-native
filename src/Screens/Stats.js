@@ -15,19 +15,17 @@ const Stats = ({navigation}) => {
 			{stats && stats.map((stat) => {
 				console.log(stat);
 				return (
-					<>
 					<View style={styles.block} key={stat.source_id}>
 						<Text style={styles.textSours}>{stat.source_name}</Text>
 						{stat.source_stats.map((element) => {
 							return (
-								<>
-									<Text style={styles.textSubject} key={element.name}>{element.name}:</Text>
-									<Text style={styles.textBalls} key={element.name}>{element.score}/{element.max_score} - {element.percent.toFixed(2)}%</Text>
-								</>
+								<View key={element.name}>
+									<Text style={styles.textSubject}>{element.name}:</Text>
+									<Text style={styles.textBalls}>{element.score}/{element.max_score} - {element.percent.toFixed(2)}%</Text>
+								</View>
 							);
 						})}
 					</View>
-					</>
 				);
 
 			})}
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 10,
 		color: 'gray',
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 'auto',
 	},
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		marginLeft: 20,
 		marginRight: 20,
-		verticalAlign: 'center',
+		textAlignVertical: 'center',
 		marginTop: 'auto',
 		marginBottom: 'auto',
 	},
