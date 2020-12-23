@@ -27,17 +27,23 @@ const Calendar = ({navigation}) => {
 	return (
 		<>
 			<Header name="Календарь" showPlus={false}/>
-			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-				<TextInput value={month.toString()} onChangeText={(text) => text && setMonth(parseInt(text))}/>
-				<TextInput value={year.toString()} onChangeText={(text) => text && setYear(parseInt(text))}/>
+			<View style={styles.container}>
+				<Text style={styles.text}>Месяц</Text>
+				<TextInput style={styles.inputDate} value={month.toString()} onChangeText={(text) => text && setMonth(parseInt(text))}/>
+				<Text style={styles.text}>Год</Text>
+				<TextInput style={styles.inputDate} value={year.toString()} onChangeText={(text) => text && setYear(parseInt(text))}/>
+			</View>
 				{calendarTasks && calendarTasks.tasks.map((task) => {
 					return (
-						<Text
-							key={task.id}>{task.desc} {task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
+						<View style={styles.block}>
+							<Text style={styles.task}key={task.id}>{task.desc}</Text>
+							<Text style={styles.task}key={task.id}>{task.deadline.day}.{task.deadline.month}.{task.deadline.year}</Text>
+						</View>
+
 					)
 				})}
 				<Text>{error}</Text>
-			</View>
+
 		</>
 	);
 };
@@ -45,12 +51,51 @@ const Calendar = ({navigation}) => {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+		marginBottom: 50,
+		marginTop: 50,
+	},
+
+	task: {
+		fontFamily: 'Roboto',
+		fontSize: 18,
+		marginLeft: 20,
+		marginRight: 20,
+		verticalAlign: 'center',
+		marginTop: 'auto',
+		marginBottom: 'auto',
+	},
+
+	text:{
+		fontFamily: 'Roboto',
+		fontSize: 18,
+	},
+
+	block:{
+		height: 50,
+		width: "80%",
+
+		marginTop: 5,
+		marginLeft: 'auto',
+		marginRight: 'auto',
+
+		borderWidth: 1,
+		borderColor: "#FF5F6B",
+		backgroundColor: '#FFFFFF',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+	},
+
+	inputDate:{
+		width: 100,
+		borderWidth: 1,
+		borderRadius: 5,
+		marginTop: 10,
+		marginBottom: 10,
 	},
 });
+
 
 
 export default Calendar;
