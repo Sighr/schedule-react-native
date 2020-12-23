@@ -2,13 +2,13 @@ import React from 'react';
 import {StyleSheet, Text, View} from "react-native";
 import {StatusBar} from "expo-status-bar";
 import RouterButtons from "./RouterButtons.js";
+import Header from "../Components/Header";
 
 const Stats = ({navigation}) => {
 	return (
-		<View style={styles.container}>
-			<Text>Statistics screen!</Text>
-			<RouterButtons navigation={navigation}/>
-		</View>
+		<>
+			<Header name="Статистика" showPlus={false}/>
+		</>
 	);
 };
 
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Stats
+export default Stats;

@@ -2,13 +2,13 @@ import React from 'react';
 import {StyleSheet, Text, View} from "react-native";
 import {StatusBar} from "expo-status-bar";
 import RouterButtons from "./RouterButtons.js";
+import Header from "../Components/Header";
 
 const TaskSources = ({navigation}) => {
 	return (
-		<View style={styles.container}>
-			<Text>Task sources screen</Text>
-			<RouterButtons navigation={navigation}/>
-		</View>
+		<>
+			<Header name="Источники" showPlus={true}/>
+		</>
 	);
 };
 
